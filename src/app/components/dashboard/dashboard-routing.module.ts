@@ -4,30 +4,35 @@ import { DashboardComponent } from './dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: DashboardComponent,
     children: [
       {
-        path: "",
+        path: '',
         component: InicioComponent,
       },
       {
-        path: "usuarios",
+        path: 'usuarios',
         component: UsuariosComponent,
       },
       {
-        path: "reportes",
+        path: 'reportes',
         component: ReportesComponent,
       },
-    ]
+      {
+        path: 'crear-usuario',
+        component: CrearUsuarioComponent
+      }
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}

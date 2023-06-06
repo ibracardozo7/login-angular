@@ -6,6 +6,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-usuarios',
@@ -21,7 +22,8 @@ export class UsuariosComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private _snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +39,12 @@ export class UsuariosComponent implements OnInit {
     console.log(id);
     this.usuarioService.deleteUsuario(id)
     this.cargarUsuario()
+
+    this._snackBar.open('El usuario fue eliminado con exitos', '', {
+      duration: 1500,
+      horizontalPosition: "center",
+      verticalPosition: "bottom"
+    })
   }
 
   ngAfterViewInit() {

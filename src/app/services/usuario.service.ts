@@ -24,4 +24,8 @@ export class UsuarioService {
   deleteUsuario(id: number) {
     this.listUsuarios.splice(id, 1)
   }
+
+  agregarUsuario(data: Usuario) {
+    this.listUsuarios.unshift(data)
+  }
 }

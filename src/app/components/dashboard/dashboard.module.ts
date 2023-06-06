@@ -8,8 +8,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ReportesComponent } from './reportes/reportes.component';
 
-import { MaterialModule } from "../../material/material.module"
-
+import { MaterialModule } from "../../material/material.module";
+import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component'
+import { ReactiveFormsModule } from "@angular/forms"
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { MaterialModule } from "../../material/material.module"
     InicioComponent,
     NavbarComponent,
     UsuariosComponent,
-    ReportesComponent
+    ReportesComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }
